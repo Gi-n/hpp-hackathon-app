@@ -1,0 +1,72 @@
+<div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ errorMessage }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+        (click)="errorMessage = null"></button>
+</div>
+<div class="row justify-content-center">
+    <div class="col-sm-4 col-sm-offset-4">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <h1 class="h3 mb-3 fw-normal">Register</h1>
+
+            <div class="form-floating mb-2">
+                <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name">
+                <label for="name">Name</label>
+                <div *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.invalid"
+                    class="text-danger small mt-1 ms-1">
+                    <div *ngIf="registerForm.get('name')?.errors?.['required']">Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-floating mb-2 mt-4">
+                <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+                <label for="email">Email address</label>
+                <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid"
+                    class="text-danger small mt-1 ms-1">
+                    <div *ngIf="registerForm.get('email')?.errors?.['required']">Email is required</div>
+                    <div *ngIf="registerForm.get('email')?.errors?.['email']">Enter a valid email</div>
+                </div>
+            </div>
+
+            <div class="form-floating mb-3 mt-4">
+                <input type="password" class="form-control" id="password" placeholder="Password"
+                    formControlName="password">
+                <label for="password">Password</label>
+                <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid"
+                    class="text-danger small mt-1 ms-1">
+                    <div *ngIf="registerForm.get('password')?.errors?.['required']">Password is required</div>
+                </div>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password"
+                    formControlName="confirmPassword">
+                <label for="confirmPassword">Confirm Password</label>
+                <div *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.invalid"
+                    class="text-danger small mt-1 ms-1">
+                    <div *ngIf="registerForm.get('confirmPassword')?.errors?.['required']">Confirm Password is required
+                    </div>
+                </div>
+                <div *ngIf="registerForm.errors?.['passwordMismatch'] && registerForm.get('confirmPassword')?.touched"
+                    class="text-danger small mt-1 ms-1">
+                    Passwords do not match
+                </div>
+            </div>
+
+            <!-- Role dropdown, only visible for /admin/register -->
+            <div *ngIf="showRoleDropdown" class="form-floating mb-3">
+                <select class="form-select" id="role" formControlName="role">
+                    <option value="">Select role (optional)</option>
+                    <option value="doctor">Doctor</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <label for="role">Role</label>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary mt-5" type="submit">Register</button>
+            <div class="text-center mt-3">
+                <span>Have an account?</span>
+                <a routerLink="/public/login" class="btn btn-link p-0 align-baseline">Login</a>
+            </div>
+        </form>
+    </div>
+</div>

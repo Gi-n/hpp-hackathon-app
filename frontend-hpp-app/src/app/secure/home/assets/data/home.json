@@ -1,0 +1,32 @@
+{
+  "header": {
+    "title": "Healthcare Portal",
+    "subtitle": "Explore the latest updates, tips, and resources to keep you and your loved ones healthy. Stay informed with trusted healthcare information.",
+    "buttons": {
+      "contactBtn": "Contact us",
+      "aboutUsBtn": "About us",
+      "contactUsBtnAnalytics": "contact_click",
+      "aboutUsBtnAnalytics": "about_us_click"
+    }
+  },
+  "featuredPosts": [
+    {
+      "category": "Wellness",
+      "categoryClass": "primary",
+      "title": "Healthy Living Tips",
+      "date": "Jun 10",
+      "text": "Discover simple lifestyle changes that can improve your overall well-being and help prevent common illnesses.",
+      "link": "#",
+      "thumbnail": "assets/images/health1.svg"
+    },
+    {
+      "category": "Nutrition",
+      "categoryClass": "success",
+      "title": "Balanced Diet Guide",
+      "date": "Jun 8",
+      "text": "Learn how to create a balanced meal plan with essential nutrients for every age group.",
+      "link": "#",
+      "thumbnail": "assets/images/health2.svg"
+    }
+  ]
+}

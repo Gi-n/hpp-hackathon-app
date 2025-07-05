@@ -1,0 +1,63 @@
+<header class="p-3 mb-3 border-bottom shadow-sm">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-between">
+            <!-- Right Side: Bayer Health Logo -->
+            <div class="d-flex align-items-center">
+                <a href="/" class="d-flex align-items-center text-decoration-none">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-cross me-2 text-primary" style="font-size: 1.5rem;"></i>
+                        <span class="h4 mb-0 text-primary fw-bold">Bayer</span>
+                        <span class="h4 mb-0 text-success fw-bold ms-1">Health</span>
+                    </div>
+                </a>
+            </div>
+
+            <ng-container *ngIf="isSecurePage">
+                <div class="d-flex align-items-center">
+                    <ul class="nav me-4">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3 link-dark" href="#" id="dashboardDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-speedometer2 me-2"></i>Dashboard Health Topics
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dashboardDropdown">
+                                <li><a class="dropdown-item" href="#"><i
+                                            class="bi bi-heart-pulse me-2"></i>Cardiology</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-brain me-2"></i>Neurology</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-lungs me-2"></i>Respiratory</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-capsule me-2"></i>Oncology</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i
+                                            class="bi bi-shield-plus me-2"></i>Immunology</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-grid me-2"></i>All Topics</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="nav-link px-3 link-dark">
+                                <i class="bi bi-info-circle me-2"></i>About Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Side: Profile Dropdown -->
+                <div class="d-flex align-items-center">
+                    <a href="#" class="d-block link-dark text-decoration-none me-3" (click)="toAdminDashboard()">
+                       Admin Dashboard
+                    </a>
+                    <a href="#" class="d-block link-dark text-decoration-none me-3" (click)="onLogout()">
+                        <i class="bi bi-box-arrow-right me-2" style="font-size: 1.5rem;"></i>Logout
+                    </a>
+                    <a href="#" class="d-block link-dark text-decoration-none">
+                        <i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>Profile
+                    </a>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</header>
